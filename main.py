@@ -8,6 +8,13 @@ from matplotlib.patches import PathPatch
 # 1. AI 텍스처/스타일 시뮬레이션 함수
 # 실제 AI 모델은 여기에 통합되어야 하지만, 예시에서는 Matplotlib 스타일을 사용합니다.
 # -----------------------------------------------------------
+
+import streamlit as st
+st.title("테스트 제목") 
+st.write("테스트 텍스트가 보이나요?") # 이 줄을 추가해 보세요!
+
+
+
 def get_simulated_ai_style(style_name):
     """
     사용자가 선택한 'AI 스타일'에 따라 색상과 패턴을 반환합니다.
