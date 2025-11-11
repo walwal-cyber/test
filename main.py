@@ -9,10 +9,6 @@ from matplotlib.patches import PathPatch
 # 실제 AI 모델은 여기에 통합되어야 하지만, 예시에서는 Matplotlib 스타일을 사용합니다.
 # -----------------------------------------------------------
 
-import streamlit as st
-st.title("테스트 제목") 
-st.write("테스트 텍스트가 보이나요?") # 이 줄을 추가해 보세요!
-
 
 
 def get_simulated_ai_style(style_name):
@@ -140,6 +136,12 @@ final_style = get_simulated_ai_style(selected_style)
 # 2. Matplotlib 그래프 생성
 fig, ax = plt.subplots(figsize=(10, 10))
 draw_tessellation(ax, final_tile_coords, cols, rows, final_style)
+
+# Safe Way to use Matplotlib in Streamlit
+fig, ax = plt.subplots(figsize=(10, 10))
+# ... drawing code using ax ...
+st.pyplot(fig)
+
 
 # 3. Streamlit에 그래프 표시
 st.pyplot(fig)
